@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+/* Colors */
+:root {
+  --bg-color: #eee;
+  --fg-color: #fff;
+  --heading-color: #333;
+  --body-color: #555;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--bg-color);
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main wrapper */
+.groceries {
+  position: relative;
+  margin: 100px auto;
+  padding: 40px;
+  max-width: 60vw;
+  background-color: var(--fg-color);
+  border-radius: 10px;
+  color: var(--body-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.groceries__title {
+  position: absolute;
+  top: -5rem;
+  color: var(--heading-color);
+}
+
+/* Form styles */
+.add-form,
+.edit-form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
+}
+
+.form-group input {
+  width: 19em;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--heading-color);
+}
+
+/* List styles */
+.grocery-list {
+  list-style: none;
+  padding: 0;
+}
+
+.grocery-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding-top: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grocery-item__controls button:hover {
+  cursor: pointer;
 }
